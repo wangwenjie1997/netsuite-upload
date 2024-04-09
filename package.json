@@ -74,6 +74,10 @@
         "netSuiteUpload.rootDirectory": {
           "type": "string",
           "description": "NetSuite File Cabinet SuiteScripts sub-folder path to upload to. Defaults to 'SuiteScripts' if not set."
+        },
+        "netSuiteUpload.rootDirectoryLocal": {
+          "type": "string",
+          "description": "Local NetSuite File Cabinet SuiteScripts sub-folder path to upload to."
         }
       }
     },

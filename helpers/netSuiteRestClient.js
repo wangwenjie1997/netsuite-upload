@@ -11,10 +11,12 @@ const BAD_VERSION_ERROR = {
 
 function getRelativePath(absFilePath) {
     var rootDirectory = vscode.workspace.getConfiguration('netSuiteUpload').rootDirectory;
+    var rootDirectoryLocal = vscode.workspace.getConfiguration('netSuiteUpload').rootDirectoryLocal;
+
     if (rootDirectory) {
-        return path.join(rootDirectory, absFilePath.slice(vscode.workspace.rootPath.length));
+        return path.join(rootDirectory, absFilePath.slice(vscode.workspace.rootPath.length + rootDirectoryLocal.length));
     } else {
-        return path.join('SuiteScripts', absFilePath.slice(vscode.workspace.rootPath.length));
+        return path.join('SuiteScripts', absFilePath.slice(vscode.workspace.rootPath.length + rootDirectoryLocal.length));
     }
 }
 
